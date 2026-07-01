@@ -57,7 +57,8 @@ Execute this combined sequence as root or a user with `sudo` privileges to autom
 ## Step 1 (Install)
 
 ```bash
-wget -qO- [https://github.com/getverohub/verominer/releases/download/Miner/vero-node-v1.tar.gz](https://github.com/getverohub/verominer/releases/download/Miner/vero-node-v1.tar.gz) | tar -xzv && cd vero-node-v1 && sudo ./install.sh
+mkdir vero && cd vero
+wget -qO- https://github.com/getverohub/verominer/releases/download/Miner/vero-node-v1.tar.gz | tar -xzv && sudo ./install.sh
 ```
 ## Step 2 (Running)
 ```bash
