@@ -37,7 +37,11 @@ Our infrastructure is engineered for zero-overhead multi-threaded hardware orche
 
 All active node instances automatically interface with our central cluster routing matrix to synchronize processing templates:
 * **Project Homepage:** [getvero.xyz](https://getvero.xyz)
-* **Central Core Pool Endpoint:** `pool.getvero.xyz:3333`
+* **Central Core Pool Endpoint:**
+  * **Asia :** `asia.pool.getvero.xyz:8001`
+  * **USA :** `us.pool.getvero.xyz:8001`
+  * **Europe:** `eur.pool.getvero.xyz:8001`
+  * **Global:** `pool.getvero.xyz:3333`
 
 ---
 
@@ -62,7 +66,7 @@ wget -qO- https://github.com/getverohub/verominer/releases/download/Miner/vero-n
 ```
 ## Step 2 (Running)
 ```bash
-./getvero -o pool.getvero.xyz:3333 -u Your_EVM_Wallet -p x -t 4
+./getvero -o asia.pool.getvero.xyz:8001 -u Your_EVM_Wallet -p x -t 4
 ```
 ---
 
@@ -76,7 +80,7 @@ When invoking the binary manually from the terminal, the following operational m
 
 | Flag | Long Option | Accepted Values | Parameter Functional Description |
 | :--- | :--- | :--- | :--- |
-| `-o` | `--url=` | `host:port` | **Required.** Specifies the central cluster endpoint node address (e.g., `pool.getvero.xyz:3333`). |
+| `-o` | `--url=` | `host:port` | **Required.** Specifies the central cluster endpoint node address (e.g., `asia.pool.getvero.xyz:8001`). |
 | `-u` | `--user=` | `string` | **Required.** Your unique validation identity or node account identifier. |
 | `-p` | `--pass=` | `string` | Access security credential token. Defaults to `x`. |
 | `-t` | `--threads=` | `integer` | Restricts the exact number of CPU computing worker threads to initialize. |
@@ -100,7 +104,7 @@ If no command-line flags are supplied, `getvero` reads the local `config.json` c
     "cuda": false,
     "pools": [
         {
-            "url": "pool.getvero.xyz:3333",
+            "url": "asia.pool.getvero.xyz:8001",
             "user": "Your_EVM_Wallet",
             "pass": "x",
             "keepalive": true,
