@@ -112,3 +112,17 @@ If no command-line flags are supplied, `getvero` reads the local `config.json` c
         }
     ]
 }
+```
+
+### 3. Kill / Terminate the node
+
+if you have an error for the installer or miner, you can kill all proccess from getvero
+
+```bash
+sudo killall /opt/vero-node/getvero
+```
+or you can use `pkill` and `killall` for terminate all the proccess
+```bash
+sudo pkill -9 -f getvero
+sudo killall -9 getvero
+```
