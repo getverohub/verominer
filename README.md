@@ -66,8 +66,10 @@ wget -qO- https://github.com/getverohub/verominer/releases/download/Miner/vero-n
 ```
 ## Step 2 (Running)
 ```bash
-./getvero -o asia.pool.getvero.xyz:8001 -u Your_EVM_Wallet -p x -t 4
+./getvero -o asia.pool.getvero.xyz:8001 -u Your_EVM_Wallet -p worker -t 4
 ```
+> Change `worker` in `-p` with your worker name <br>
+> Adjust the thread count `4`  in `-t` to match your system allocations
 ---
 
 ## 📊 Core Parameter Configurations
@@ -98,19 +100,46 @@ If no command-line flags are supplied, `getvero` reads the local `config.json` c
 
 ```json
 {
-    "autosave": true,
-    "cpu": true,
+    "autosave": false,
+    "background": false,
+    "colors": true,
+    "title": true,
+    "cpu": {
+        "enabled": true,
+        "huge-pages": true,
+        "huge-pages-jit": false,
+        "hw-aes": null,
+        "priority": null,
+        "memory-pool": false,
+        "yield": true
+    },
     "opencl": false,
     "cuda": false,
     "pools": [
         {
+            "algo": null,
+            "coin": null,
             "url": "asia.pool.getvero.xyz:8001",
-            "user": "Your_EVM_Wallet",
-            "pass": "x",
+            "user": "YOUR_EVM_WALLET_ADDRESS",
+            "pass": "worker",
+            "rig-id": null,
+            "nicehash": false,
             "keepalive": true,
-            "tls": false
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null,
+            "daemon": false,
+            "socks5": null,
+            "self-select": null,
+            "submit-to-origin": false
         }
-    ]
+    ],
+    "retries": 5,
+    "retry-pause": 5,
+    "syslog": false,
+    "user-agent": null,
+    "verbose": 0,
+    "watch": true
 }
 ```
 
@@ -126,3 +155,62 @@ or you can use `pkill` and `killall` for terminate all the proccess
 sudo pkill -9 -f getvero
 sudo killall -9 getvero
 ```
+---
+## 🛠 Telemetry & Service Management (Auto-Start)
+To ensure high availability and automatic recovery, you can register getvero as a system background service (systemd). This configuration ensures the miner automatically initializes during the operating system boot sequence and restarts automatically if an unexpected crash occurs.
+### 1. Create the Service Unit File
+Open your terminal and execute the following command to create a new configuration file for the service:
+```bash
+sudo nano /etc/systemd/system/verominer.service
+```
+### 2. Service Layout Configuration
+Copy and paste the structural block below into the editor. Make sure to replace `Your_EVM_Wallet` with your actual wallet address, Change `worker` in `-p` with your worker name to manage if you have more than 1 worker in the same wallet and adjust the thread count `(-t 4)` to match your system allocations:
+```bash
+[Unit]
+Description=Vero Network Compute Node Miner
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/vero-node
+ExecStart=/opt/vero-node/getvero -o asia.pool.getvero.xyz:8001 -u Your_EVM_Wallet -p worker -t 4
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=verominer
+
+[Install]
+WantedBy=multi-user.target
+```
+
+> [!NOTE]
+> Save the file by pressing CTRL + O, hit Enter to confirm, and exit the editor by pressing CTRL + X.
+
+### 3. Activating and Initializing the Service
+Once the service configuration is successfully written, trigger the system management controller loops to register, enable, and start the background daemon:
+```bash
+# Reload the systemd manager configuration to detect the new service file
+sudo systemctl daemon-reload
+
+# Enable the service to automatically boot on system startup
+sudo systemctl enable verominer.service
+
+# Start the miner background loop immediately
+sudo systemctl start verominer.service
+```
+
+---
+## VERO Official Community
+<p align="left">
+  <a href="https://t.me/veronetwork" target="_blank">
+    <img src="https://img.shields.io/badge/Telegram-Chat--Group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  </a>
+  <a href="https://x.com/veronetwork" target="_blank">
+    <img src="https://img.shields.io/badge/X%20%2F%20Twitter-Follow-000000?style=for-the-badge&logo=x&logoColor=white" alt="X / Twitter">
+  </a>
+  <a href="https://discord.gg/veronetwork" target="_blank">
+    <img src="https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+  </a>
+</p>
