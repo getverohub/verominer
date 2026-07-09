@@ -84,8 +84,8 @@ When invoking the binary manually from the terminal, the following operational m
 | :--- | :--- | :--- | :--- |
 | `-o` | `--url=` | `host:port` | **Required.** Specifies the central cluster endpoint node address (e.g., `asia.pool.getvero.xyz:8001`). |
 | `-u` | `--user=` | `string` | **Required.** Your unique validation identity or node account identifier. |
-| `-p` | `--pass=` | `string` | Access security credential token. Defaults to `x`. |
-| `-t` | `--threads=` | `integer` | Restricts the exact number of CPU computing worker threads to initialize. |
+| `-p` | `--pass=` | `string` | **Required.** Access security credential token. Defaults to `worker`. Change for monitoring your device |
+| `-t` | `--threads=` | `integer` | **Required.** Restricts the exact number of CPU computing worker threads to initialize. |
 | `-x` | `--proxy=` | `host:port` | Forces all system transport pipelines through a SOCKS5 secure network proxy. |
 | `-k` | `--keepalive` | *None* | Sends proactive keepalive keep-open packets to minimize network session drops. |
 | `-B` | `--background`| *None* | Detaches execution thread and runs the core loop silently as an OS daemon. |
@@ -204,13 +204,13 @@ sudo systemctl start verominer.service
 ---
 ## VERO Official Community
 <p align="left">
-  <a href="https://t.me/veronetwork" target="_blank">
+  <a href="https://t.me/verotoken" target="_blank">
     <img src="https://img.shields.io/badge/Telegram-Chat--Group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
   </a>
-  <a href="https://x.com/veronetwork" target="_blank">
+  <a href="https://x.com/verotoken" target="_blank">
     <img src="https://img.shields.io/badge/X%20%2F%20Twitter-Follow-000000?style=for-the-badge&logo=x&logoColor=white" alt="X / Twitter">
   </a>
-  <a href="https://discord.gg/veronetwork" target="_blank">
+  <a href="https://discord.gg/verotoken" target="_blank">
     <img src="https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
   </a>
 </p>
