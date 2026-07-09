@@ -14,23 +14,13 @@ Our infrastructure is engineered for zero-overhead multi-threaded hardware orche
 
 ## 📌 Table of Contents
 * [Features](#-features)
-* [Network Infrastructure](#%EF%B8%8F-network-infrastructure)
-* [System Requirement Notice](#-system-requirement-notice)
+* [Network Infrastructure](#-network-infrastructure)
+* [System Requirement Notice](#%EF%B8%8F-system-requirement-notice)
 * [Quick Automated Deployment](#%EF%B8%8F-quick-automated-deployment)
-  * [Method 1: Instant One-Line Setup (Recommended)](#method-1-instant-one-line-setup-recommended)
-  * [Method 2: Manual Step-by-Step Layout](#method-2-manual-step-by-step-layout)
-* [Configuration Fallback Schema](#-configuration-fallback-schema)
-* [Telemetry & Service Management](#%EF%B8%8F-telemetry--service-management)
-
-## 📌 Table of Contents
-* [Features](#features)
-* [Network Infrastructure](#network-infrastructure)
-* [System Requirement Notice](#system-requirement-notice)
-* [Quick Automated Deployment](#quick-automated-deployment)
-  * [Method 1: Instant One-Line Setup (Recommended)](#method-1-instant-one-line-setup-recommended)
-  * [Method 2: Manual Step-by-Step Layout](#method-2-manual-step-by-step-layout)
-* [Core Parameter Configurations](#core-parameter-configurations)
-* [Telemetry & Service Management (Auto-Start)](#telemetry--service-management-auto-start)
+  * [Step 1 (Install)](#step-1-install)
+  * [Step 2 (Running)](#step-2-running)
+* [Core Parameter Configurations](#-core-parameter-configurations)
+* [Telemetry & Service Management (Auto-Start)](#-telemetry--service-management-auto-start)
 * [VERO Official Community](#vero-official-community)
 ---
 
