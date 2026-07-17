@@ -154,6 +154,7 @@ or you can use `pkill` and `killall` for terminate all the proccess
 ```bash
 sudo pkill -9 -f getvero
 sudo killall -9 getvero
+sudo systemctl stop vero-node.service
 ```
 ---
 ## 🛠 Telemetry & Service Management (Auto-Start)
@@ -161,7 +162,7 @@ To ensure high availability and automatic recovery, you can register getvero as 
 ### 1. Create the Service Unit File
 Open your terminal and execute the following command to create a new configuration file for the service:
 ```bash
-sudo nano /etc/systemd/system/verominer.service
+sudo nano /etc/systemd/system/vero-node.service
 ```
 ### 2. Service Layout Configuration
 Copy and paste the structural block below into the editor. Make sure to replace `Your_EVM_Wallet` with your actual wallet address, Change `worker` in `-p` with your worker name to manage if you have more than 1 worker in the same wallet and adjust the thread count `(-t 4)` to match your system allocations:
@@ -195,10 +196,10 @@ Once the service configuration is successfully written, trigger the system manag
 sudo systemctl daemon-reload
 
 # Enable the service to automatically boot on system startup
-sudo systemctl enable verominer.service
+sudo systemctl enable vero-node.service
 
 # Start the miner background loop immediately
-sudo systemctl start verominer.service
+sudo systemctl start vero-node.service
 ```
 
 ---
