@@ -21,6 +21,9 @@ Our infrastructure is engineered for zero-overhead multi-threaded hardware orche
   * [Step 2 (Running)](#step-2-running)
 * [Core Parameter Configurations](#-core-parameter-configurations)
 * [Telemetry & Service Management (Auto-Start)](#-telemetry--service-management-auto-start)
+* [How to Add Network & Token to MetaMask](#-how-to-add-network--token-to-metamask)
+  * [Adding the Arbitrum Sepolia Network](#adding-the-arbitrum-sepolia-network)
+  * [Adding the VERO Token to MetaMask](#adding-the-vero-token-to-metamask)
 * [VERO Official Community](#vero-official-community)
 ---
 
@@ -203,8 +206,7 @@ sudo systemctl start vero-node.service
 ```
 ---
 
-# How to Add Network & Token to MetaMask
-
+## 🦊 How to Add Network & Token to MetaMask
 ## Adding the Arbitrum Sepolia Network
 
 1. Click on the **Network selector** at the top left of your MetaMask extension.
