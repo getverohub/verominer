@@ -201,7 +201,38 @@ sudo systemctl enable vero-node.service
 # Start the miner background loop immediately
 sudo systemctl start vero-node.service
 ```
+---
 
+# How to Add Network & Token to MetaMask
+
+## Adding the Arbitrum Sepolia Network
+
+1. Click on the **Network selector** at the top left of your MetaMask extension.
+2. Select **Manage networks** (or **Add network**).
+3. Click **Add a custom network**.
+4. Enter the following network details:
+   * **Network Name:** Arbitrum Sepolia
+   * **Default RPC URL:** `https://sepolia-rollup.arbitrum.io/rpc`
+   * **Chain ID:** `421614`
+   * **Currency Symbol:** ETH
+   * **Block Explorer URL:** `https://sepolia.arbiscan.io`
+5. Click **Save**.
+
+Follow the visual guide below to add the network directly to your MetaMask wallet:
+
+![Add Network to MetaMask](addARB.webp)
+
+## Adding the VERO Token to MetaMask
+
+1. Select the **Network selector** and switch to **Arbitrum Sepolia** (if you haven't added it yet, please follow the steps above).
+2. Click the **three dots (...)** menu icon, then select **Manage Token** (or **Import tokens**).
+3. Paste the Token Smart Contract address:
+   * **Contract Address:** `0xE8C79cB66f89E21e4DB91cd7bf006a04d15cbd47`
+4. Once the token details automatically appear, click **Save** (or **Import**).
+
+Follow the visual guide below to add the token to your MetaMask wallet:
+
+![Add VERO to MetaMask](addVERO.webp)
 ---
 ## VERO Official Community
 <p align="left">
@@ -215,3 +246,5 @@ sudo systemctl start vero-node.service
     <img src="https://img.shields.io/badge/Discord-Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
   </a>
 </p>
+
+
